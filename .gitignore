@@ -7,3 +7,4 @@ csv_files/customers.csv
 csv_files/employees.csv
 csv_files/products.csv
 csv_files/sales.csv
+.gitignore
