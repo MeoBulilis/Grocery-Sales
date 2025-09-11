@@ -1,0 +1,9 @@
+desktop.ini
+.vscode/settings.json
+csv_files/categories.csv
+csv_files/cities.csv
+csv_files/countries.csv
+csv_files/customers.csv
+csv_files/employees.csv
+csv_files/products.csv
+csv_files/sales.csv
