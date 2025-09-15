@@ -77,7 +77,15 @@ GROUP BY products_dim.product_name
 ORDER BY total_sales DESC;
 
 -- Sales Performance for Null sales_date
-
+SELECT
+    products_dim.product_name,
+    SUM(sales_fact.quantity * products_dim.price * (1 - sales_fact.discount)) AS total_sales
+FROM sales_fact
+INNER JOIN products_dim
+    ON sales_fact.product_id = products_dim.product_id
+WHERE sales_fact.sales_date IS NULL
+GROUP BY products_dim.product_name
+ORDER BY total_sales DESC;
 
 
 -- Monthly sales using Window Function
@@ -118,7 +126,8 @@ WITH monthly_sales AS (
 SELECT 
     product_name,
     sales_month,
-    total_sales
+    total_sales,
+    rank
 FROM (
     SELECT 
         ms.*,
@@ -129,7 +138,6 @@ WHERE rank <= 5   -- change 3 to how many "top products" you want
 ORDER BY sales_month, rank;
 
 
-sdsdsd
 
 
 
