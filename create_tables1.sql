@@ -110,6 +110,9 @@ FROM customers_dim
 ALTER TABLE customers_dim
 ALTER COLUMN middle_initial TYPE VARCHAR(4);
 
+ALTER TABLE products_dim
+ALTER COLUMN is_allergic TYPE VARCHAR(7)
+
 SELECT * FROM categories_dim LIMIT 5;
 SELECT * FROM cities_dim LIMIT 5;
 SELECT * FROM countries_dim LIMIT 5;
@@ -118,5 +121,4 @@ SELECT * FROM employees_dim LIMIT 5;
 SELECT * FROM products_dim LIMIT 5;
 SELECT * FROM sales_fact LIMIT 5;
 
-ALTER TABLE products_dim
-ALTER COLUMN is_allergic TYPE VARCHAR(7)
+
